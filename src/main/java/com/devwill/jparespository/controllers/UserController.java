@@ -53,4 +53,22 @@ public class UserController {
         return ResponseEntity.ok(users);
     }
 
+    @GetMapping(value = "/new-search-salary")
+    public ResponseEntity<Page<User>> findBySalary(
+            @RequestParam(defaultValue = "0") final Double minSalary,
+            @RequestParam(defaultValue = "1000000000000") final Double maxSalary,
+            final Pageable pageable
+    ) {
+        final var users = repository.findBySalaryBetween(minSalary, maxSalary, pageable);
+        return ResponseEntity.ok(users);
+    }
+
+    @GetMapping(value = "/new-search-name")
+    public ResponseEntity<Page<User>> findByName(
+            @RequestParam(defaultValue = "") final String name,
+            final Pageable pageable
+    ) {
+        final var users = repository.findByNameContainingIgnoreCase(name, pageable);
+        return ResponseEntity.ok(users);
+    }
 }
