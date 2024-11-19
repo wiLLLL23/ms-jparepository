@@ -10,9 +10,9 @@
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.devsuperior</groupId>
-    <artifactId>aulajparepository</artifactId>
+    <artifactId>msjparepository</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>aula-jparepositoty</name>
+    <name>ms-jparepositoty</name>
     <description>Intensivão Java Spring</description>
     <url />
     <licenses>
